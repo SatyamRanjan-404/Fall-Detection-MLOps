@@ -1,0 +1,53 @@
+result of 1D-CNN 
+
+For Train Fall Stride=5 & Val Fall Stride=25
+without using svm :
+==================================================
+             FINAL HOLD-OUT TEST RESULTS          
+==================================================
+              precision    recall  f1-score   support
+
+  Normal (0)       0.99      0.98      0.99      9674
+    Fall (1)       0.85      0.93      0.89       967
+
+    accuracy                           0.98     10641
+   macro avg       0.92      0.96      0.94     10641
+weighted avg       0.98      0.98      0.98     10641
+
+
+Confusion Matrix:
+True Negatives (Correctly ignored normal walking): 9510
+False Positives (False alarms): 164
+False Negatives (Missed actual falls): 68
+True Positives (Successfully caught falls): 899
+
+model :models/1DCNN.pth
+---------------------------------------------------------
+
+without svm---pos_weight==1
+
+Scaling test data...
+Running inference on cuda...
+
+For Train Fall Stride=5 & Val Fall Stride=25
+
+==================================================
+             FINAL HOLD-OUT TEST RESULTS          
+==================================================
+              precision    recall  f1-score   support
+
+  Normal (0)       0.99      0.98      0.99      9674
+    Fall (1)       0.84      0.92      0.88       967
+
+    accuracy                           0.98     10641
+   macro avg       0.92      0.95      0.93     10641
+weighted avg       0.98      0.98      0.98     10641
+
+
+Confusion Matrix:
+True Negatives (Correctly ignored normal walking): 9511
+False Positives (False alarms): 163
+False Negatives (Missed actual falls): 81
+True Positives (Successfully caught falls): 886
+
+model : Not saved

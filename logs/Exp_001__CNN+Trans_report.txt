@@ -1,0 +1,29 @@
+=== EXPERIMENT: Exp_001__CNN+Trans ===
+DATE: 2026-03-26 15:58:38
+DESCRIPTION: 10-Channel SMV. Dynamic Train, Standard Val
+----------------------------------------
+Best Validation F1: 0.9145
+Final Validation Recall: 0.9442
+----------------------------------------
+Final Epoch Confusion Matrix:
+TN: 8077 | FP: 130
+FN: 46 | TP: 778
+
+========================================
+BLIND TEST EXECUTION: Ultimate Blind Test
+DATE: 2026-03-26 16:00:44
+TEST EXTRACTION METHOD: Strict Overlap (50%)
+----------------------------------------
+              precision    recall  f1-score   support
+
+  Normal (0)       0.99      0.99      0.99      9584
+    Fall (1)       0.87      0.93      0.90       957
+
+    accuracy                           0.98     10541
+   macro avg       0.93      0.96      0.95     10541
+weighted avg       0.98      0.98      0.98     10541
+
+Confusion Matrix:
+TN: 9454 | FP: 130
+FN: 67 | TP: 890
+========================================

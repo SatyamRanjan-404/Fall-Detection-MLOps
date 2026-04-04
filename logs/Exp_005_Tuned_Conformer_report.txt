@@ -1,0 +1,57 @@
+=== EXPERIMENT: Exp_005_Tuned_Conformer ===
+DATE: 2026-04-03 19:46:54
+DESCRIPTION: Final run using Optuna's winning parameters (d128, h8, L2, drop0.38).
+----------------------------------------
+Best Validation F1: 0.9173
+Final Validation Recall: 0.9175
+----------------------------------------
+Final Epoch Confusion Matrix:
+TN: 8123 | FP: 84
+FN: 68 | TP: 756
+
+========================================
+BLIND TEST EXECUTION: Ultimate Blind Test
+DATE: 2026-04-03 19:48:12
+TEST EXTRACTION METHOD: Strict Overlap (50%)
+----------------------------------------
+              precision    recall  f1-score   support
+
+  Normal (0)       0.99      0.99      0.99      9584
+    Fall (1)       0.91      0.91      0.91       957
+
+    accuracy                           0.98     10541
+   macro avg       0.95      0.95      0.95     10541
+weighted avg       0.98      0.98      0.98     10541
+
+Confusion Matrix:
+TN: 9493 | FP: 91
+FN: 86 | TP: 871
+========================================
+
+=== OPTIMIZATION COMPLETE ===
+Best Trial:
+  Best F1 Score: 0.9157
+  Winning Hyperparameters: 
+    d_model: 128
+    num_heads: 8
+    num_layers: 2
+    dropout_rate: 0.38574145802807036
+    lr: 0.0013845572424527619
+    batch_size: 256
+
+
+1. Did we tackle Class Imbalance? (The Dynamic Stride Technique)
+Yes, we absolutely tackled it, and Dynamic Stride was the weapon we used.
+
+You had a slight misconception: the dynamic technique does not change the window size. The window size is strictly locked at 50 frames. It changes the step distance (the stride) between each window.
+
+Think of it like taking photographs of an event:
+
+Normal Data (Walking/Sitting): Nothing interesting is happening. We take a "photo" (a 50-frame window) and then step forward by 25 frames to take the next one. This creates a standard 50% overlap.
+
+Fall Data (The Anomaly): This happens in a fraction of a second. As soon as the algorithm sees a fall in the CSV, it switches to "Burst Mode." It takes a 50-frame window, but then steps forward by only 5 frames to take the next one. This creates a massive 90% overlap.
+
+How this fixes Class Imbalance:
+Instead of having 10,000 normal windows and only 100 fall windows (which would cause the AI to ignore falls entirely), the burst-mode generates hundreds of slightly shifted fall windows. It mathematically multiplies the minority class without synthesizing fake data.
+
+Interact with this visualization to see exactly how your WindowExtractor handled the math:

@@ -1,0 +1,29 @@
+=== EXPERIMENT: Exp_002_Ultimate_1DCNN ===
+DATE: 2026-04-04 09:06:02
+DESCRIPTION: Final run using Optuna parameters (f1=32, f2=256, k=7, dropout=0.24).
+----------------------------------------
+Best Validation F1: 0.9174
+Final Validation Recall: 0.9199
+----------------------------------------
+Final Epoch Confusion Matrix:
+TN: 8131 | FP: 76
+FN: 66 | TP: 758
+
+========================================
+BLIND TEST EXECUTION: Ultimate CNN Blind Test
+DATE: 2026-04-04 09:06:03
+TEST EXTRACTION METHOD: Strict Overlap (50%)
+----------------------------------------
+              precision    recall  f1-score   support
+
+  Normal (0)       0.99      0.99      0.99      9584
+    Fall (1)       0.91      0.90      0.91       957
+
+    accuracy                           0.98     10541
+   macro avg       0.95      0.95      0.95     10541
+weighted avg       0.98      0.98      0.98     10541
+
+Confusion Matrix:
+TN: 9501 | FP: 83
+FN: 93 | TP: 864
+========================================

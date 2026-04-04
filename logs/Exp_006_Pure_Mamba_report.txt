@@ -1,0 +1,29 @@
+=== EXPERIMENT: Exp_006_Pure_Mamba ===
+DATE: 2026-04-03 20:39:12
+DESCRIPTION: Testing purely native PyTorch Selective State Space Model vs Conformer.
+----------------------------------------
+Best Validation F1: 0.9153
+Final Validation Recall: 0.9272
+----------------------------------------
+Final Epoch Confusion Matrix:
+TN: 8110 | FP: 97
+FN: 60 | TP: 764
+
+========================================
+BLIND TEST EXECUTION: Mamba Blind Test
+DATE: 2026-04-03 20:39:13
+TEST EXTRACTION METHOD: Strict Overlap (50%)
+----------------------------------------
+              precision    recall  f1-score   support
+
+  Normal (0)       0.99      0.99      0.99      9584
+    Fall (1)       0.89      0.91      0.90       957
+
+    accuracy                           0.98     10541
+   macro avg       0.94      0.95      0.94     10541
+weighted avg       0.98      0.98      0.98     10541
+
+Confusion Matrix:
+TN: 9474 | FP: 110
+FN: 87 | TP: 870
+========================================

@@ -1,0 +1,29 @@
+=== EXPERIMENT: Exp_007_Pure_Mamba ===
+DATE: 2026-04-04 07:21:02
+DESCRIPTION: Final run using Optuna parameters (d_model=64, dropout=0.33, No CNN).
+----------------------------------------
+Best Validation F1: 0.9052
+Final Validation Recall: 0.9357
+----------------------------------------
+Final Epoch Confusion Matrix:
+TN: 8095 | FP: 112
+FN: 53 | TP: 771
+
+========================================
+BLIND TEST EXECUTION: Pure Mamba Blind Test
+DATE: 2026-04-04 07:21:08
+TEST EXTRACTION METHOD: Strict Overlap (50%)
+----------------------------------------
+              precision    recall  f1-score   support
+
+  Normal (0)       0.99      0.98      0.99      9584
+    Fall (1)       0.85      0.90      0.88       957
+
+    accuracy                           0.98     10541
+   macro avg       0.92      0.94      0.93     10541
+weighted avg       0.98      0.98      0.98     10541
+
+Confusion Matrix:
+TN: 9430 | FP: 154
+FN: 91 | TP: 866
+========================================
