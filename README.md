@@ -144,3 +144,4 @@ Alternatively, custom scripts inside `scripts/` provide discrete CLI handles to 
 ## Author & Acknowledgements
 
 Created as part of an Advanced Machine Learning curriculum. Special thanks to the supervising Faculty for designing data constraints that forced engineering realities over synthetic scaling shortcuts.
+Work of : Satyam Ranjan , Soham Ganguly , Guranash Singh , Vividh Yadav , Shivansh Goswami , Jigmit Wangldan
